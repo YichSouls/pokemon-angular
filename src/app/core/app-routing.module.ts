@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/pokemon', pathMatch: 'full' },
+  { path: 'pokemon', component: PokemonListComponent },
+  { path: 'pokemon/:id', component: PokemonDetailComponent }
+];
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes),
+  ],
+  exports: [RouterModule],
+})
+export class AppRoutingModule { }
